@@ -21,7 +21,8 @@ class CandidatoController extends Controller
 
         // Obbener vacante por id
         $vacante=Vacante::findOrFail($idVacante);
-
+        $this->authorize('view',$vacante);
+        
         return view('candidatos.index')->with('vacante',$vacante);
     }
 

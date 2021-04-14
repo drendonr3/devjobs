@@ -22,6 +22,7 @@
         props: ['skills','oldskills'],
         mounted: function() {
             document.querySelector('#skills').value = this.oldskills;
+            
         },
         created: function() {
             if (this.oldskills) {

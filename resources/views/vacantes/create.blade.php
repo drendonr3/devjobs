@@ -96,8 +96,8 @@
             > 
                 <option value="" disabled selected>-- Selecciona --</option>
                 @foreach($experiencias as $experiencia)
-                    {{old('experiencia')==$experiencia->id?'selected':''}} 
-                    <option value="{{$experiencia->id}}">{{$experiencia->nombre}}</option>
+                    <option {{old('experiencia')==$experiencia->id?'selected':''}} 
+                        value="{{$experiencia->id}}">{{$experiencia->nombre}}</option>
                 @endforeach
             </select>
             @error('experiencia')
@@ -129,8 +129,8 @@
             > 
                 <option value="" disabled selected>-- Selecciona --</option>
                 @foreach($ubicacions as $ubicacion)
-                    {{old('ubicacion')==$ubicacion->id?'selected':''}} 
-                    <option value="{{$ubicacion->id}}">{{$ubicacion->nombre}}</option>
+                    <option {{old('ubicacion')==$ubicacion->id?'selected':''}} 
+                        value="{{$ubicacion->id}}">{{$ubicacion->nombre}}</option>
                 @endforeach
             </select>
             @error('ubicacion')
@@ -162,8 +162,8 @@
             > 
                 <option value="" disabled selected>-- Selecciona --</option>
                 @foreach($salarios as $salario)
-                    {{old('salario')==$salario->id?'selected':''}} 
-                    <option value="{{$salario->id}}">{{$salario->nombre}}</option>
+                    <option {{old('salario')==$salario->id?'selected':''}} 
+                        value="{{$salario->id}}">{{$salario->nombre}}</option>
                 @endforeach
             </select>
             @error('salario')
@@ -247,14 +247,14 @@
             <p id="error"></p>
 
             @error('imagen')
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 
-                rounded relative mt-3 mb-6"
-                role="alert"
-                >
-                    <strong class="font-bold">Error!</strong>
-                    <span>{{$message}}</span>
-            </div>
-        @enderror
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 
+                    rounded relative mt-3 mb-6"
+                    role="alert"
+                    >
+                        <strong class="font-bold">Error!</strong>
+                        <span>{{$message}}</span>
+                </div>
+            @enderror
         </div>
 
         <div class="mb-5">
